@@ -11,22 +11,22 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.EngineerId)
+      @Html.HiddenFor(model => model.EngineerId)
 
 
-    @Html.Label("Select machine: ")
+      @Html.Label("Select machine: ")
 
-    @* @if (Model.Count() == 0)
-    {
-          <p>No machines to select.</p>
-    }
-    else 
-    { *@
-          @Html.DropDownList("machineId")
-    @* } *@
+      @* @if (Model.Count() == 0)
+      {
+            <p>No machines to select.</p>
+      }
+      else 
+      { *@
+            @Html.DropDownList("machineId")
+      @* } *@
 
 
-    <input type="submit" value="Save" />
+      <input type="submit" value="Save" />
 }
 
 <p>@Html.ActionLink("Register a new machine", "Create")</p>

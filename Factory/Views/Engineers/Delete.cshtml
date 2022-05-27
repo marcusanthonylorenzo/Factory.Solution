@@ -6,9 +6,17 @@
 
 <h2>Confirm deletion:</h2>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Delete" />
-}
-@Html.ActionLink("Back", "Index")
+<section class="details-maininfo">
+
+  <section class="details-maininfo-card">
+
+      @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value="Delete" />
+      }
+      @Html.ActionLink("Back", "Index")
+
+  </section>
+
+</section>

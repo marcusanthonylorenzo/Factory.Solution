@@ -1,8 +1,8 @@
 @{
   Layout = "_Layout";
 }
-
-@model Factory.Models.Engineer
+@using Factory.Models;
+@model Factory.Models.Machine
 
 <h2>Select a current Engineer to service this Engineer:</h2>
 
@@ -10,10 +10,10 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.EngineerId)
+    @Html.HiddenFor(model => model.MachineId)
 
     @Html.Label("Select Engineer: ")
-    @Html.DropDownList("EngineerId")
+    @Html.DropDownList("engineerId")
 
     <input type="submit" value="Save" />
 }

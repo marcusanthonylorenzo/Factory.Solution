@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap');
+
 h1, h2, h3, h4 {
 	text-align: center;
 }
 
 body {
 	margin: 0 auto;
+	font-family: "Gayathri";
+	font-size: 1.2rem;
 }
 
 .main-section {
@@ -12,7 +16,7 @@ body {
 
 nav {
 	display: flex;
-	gap: 1rem;
+	justify-content: space-evenly;
 	background-color: rgba(131, 163, 236, 0.8);
 	margin: 0;
 	padding: 1rem;
@@ -23,7 +27,8 @@ nav {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	justify-content: center;
+	justify-content: flex-start;
+	gap: 0.5rem;
 }
 
 #maininfo-card-home-index {
