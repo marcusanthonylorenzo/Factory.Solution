@@ -28,7 +28,7 @@
 
                   @foreach (var machine in ViewBag.MachineList)
                   {
-                      <li>@Html.ActionLink($"{machine.Name}", "Details", "Machine", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
+                      <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
                   }
                   </ul>
 
