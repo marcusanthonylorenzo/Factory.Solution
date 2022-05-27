@@ -25,14 +25,19 @@
             }
           </ul>
         }
+        
+          <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+          <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.MachineId })</p>
 
-        <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-        <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.MachineId })</p>
-    
     </section>
 
 </section>
 
-<h4>Add/Register new machines:</h4>
-<p>@Html.ActionLink("Add Machine to for this Engineer to service.", "AddMachine", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Register a new machine", "Create", "Machines")</p>
+    <h4>Add/Register new machines:</h4>
+
+<section class="bottom-buttons">
+
+    <p>@Html.ActionLink("Add Machine to for this Engineer to service.", "AddMachine", new { id = Model.EngineerId })</p>
+    <p>@Html.ActionLink("Register a new machine", "Create", "Machines")</p>
+    
+</section>

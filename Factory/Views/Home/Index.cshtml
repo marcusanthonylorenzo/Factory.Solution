@@ -2,37 +2,35 @@
   Layout = "_Layout";
 }
 
-@* @model List<Factory.Models.>; *@
-
 <h1>Welcome to Dr. Sillystringz Factory Database.</h1>
 
 <section class="details-maininfo">
 
     <section class="details-maininfo-card" id="maininfo-card-home-index">
-          
-          <section class="details-maininfo-card-lists">
+    
+    <section class="details-maininfo-card-lists">
 
-                  <ul><h4>Current Engineers Available:</h4>
+            <ul><h4>Current Engineers Available:</h4>
 
-                  @foreach (var engineer in ViewBag.EngineerList)
-                  {
-                      <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@Class = "engineer-list-item" })</li>
-                  }
-                  </ul>
+            @foreach (var engineer in ViewBag.EngineerList)
+            {
+                <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@Class = "engineer-list-item" })</li>
+            }
+            </ul>
 
-          </section>
+    </section>
 
-          <section class="details-maininfo-card-lists">
+    <section class="details-maininfo-card-lists">
 
-                  <ul><h4>Current Machines Ready For Servicing:</h4>
+            <ul><h4>Current Machines Ready For Servicing:</h4>
 
-                  @foreach (var machine in ViewBag.MachineList)
-                  {
-                      <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
-                  }
-                  </ul>
+            @foreach (var machine in ViewBag.MachineList)
+            {
+                <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
+            }
+            </ul>
 
-          </section>
+    </section>
 
     </section>
 @*     
