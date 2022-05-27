@@ -8,29 +8,36 @@
 
 <section class="details-maininfo">
 
-    <section class="details-maininfo-card">
-
-          //use two lists for both, hide/show on click?
-
-          <ul>
-          @foreach (var engineer in ViewBag.EngineerList)
-          {
-              <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@Class = "engineer-list-item" })</li>
-          }
-          </ul>
-
-          <ul>
-          @foreach (var machine in ViewBag.MachineList)
-          {
-              <li>@Html.ActionLink($"{machine.Name}", "Details", "Machine", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
-          }
-          </ul>
-
+    <section class="details-maininfo-card" id="maininfo-card-home-index">
           
+          <section class="details-maininfo-card-lists">
 
+                  <ul><h4>Current Engineers Available:</h4>
 
+                  @foreach (var engineer in ViewBag.EngineerList)
+                  {
+                      <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId }, new {@Class = "engineer-list-item" })</li>
+                  }
+                  </ul>
+
+          </section>
+
+          <section class="details-maininfo-card-lists">
+
+                  <ul><h4>Current Machines Ready For Servicing:</h4>
+
+                  @foreach (var machine in ViewBag.MachineList)
+                  {
+                      <li>@Html.ActionLink($"{machine.Name}", "Details", "Machine", new { id = machine.MachineId }, new {@Class = "engineer-list-item" })</li>
+                  }
+                  </ul>
+
+          </section>
+
+    </section>
+@*     
         <p>@Html.ActionLink("See our Engineers.", "Index", "Engineers")</p> 
         <p>@Html.ActionLink("See the Machines we work with.", "Index", "Machines")</p>
-    </section>
+ *@
 
 </section>

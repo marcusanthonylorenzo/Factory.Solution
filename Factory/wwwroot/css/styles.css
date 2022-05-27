@@ -19,9 +19,14 @@ nav {
 	width: 100%;
 }
 
-.details-maininfo, .details-maininfo-card {
+.details-maininfo, .details-maininfo-card, .details-maininfo-card-lists{
 	display: flex;
 	flex-direction: column;
 	margin: auto;
 	justify-content: center;
+}
+
+#maininfo-card-home-index {
+	display: flex;
+	flex-direction: row;
 }
