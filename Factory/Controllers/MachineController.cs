@@ -73,9 +73,9 @@ namespace Factory.Controllers
 
     public ActionResult AddEngineer(int id)
     {
-      var thisEngineer = _db.Engineers.FirstOrDefault(Engineer => Engineer.EngineerId == id);
-      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
-      return View(thisEngineer);
+      var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
     }
 
     [HttpPost]
