@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,24 @@ namespace Factory.Controllers
             .ThenInclude(join => join.Engineer)
             .FirstOrDefault(Machine => Machine.MachineId == id);
         return View(thisMachine);
+    }
+
+    public ActionResult AddEngineer(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(Engineer => Engineer.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult AddEngineer(Machine Machine, int EngineerId)
+    {
+      if (EngineerId != 0)
+      {
+        _db.MachineEngineer.Add(new MachineEngineer() { EngineerId = EngineerId, MachineId = Machine.EngineerId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
     }
   }
 }

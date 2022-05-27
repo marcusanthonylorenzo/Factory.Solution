@@ -6,25 +6,34 @@
 
 <h2>Engineers Profile</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This Engineer is not currently tasked to any machines.</p>
-}
-else
-{
-  <h4>Machines under service:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-    {
-        <li>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId}, new {@Class = "" })</li>
-    }
+<section class="details-maininfo">
 
-  </ul>
-}
+    <section class="details-maininfo-card">
+        <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
+        @if(@Model.JoinEntities.Count == 0)
+        {
+          <p>This Engineer is not currently tasked to any machines.</p>
+        }
+        else
+        {
+          <h4>Machines under service:</h4>
+          <ul>
+          @foreach(var join in Model.JoinEntities)
+            {
+                <li>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId}, new {@Class = "" })</li>
+            }
+          </ul>
+        }
 
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Add Engineer To Machine Maintainence", "AddMachine", new { id = Model.EngineerId })</p>
+        <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+        <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.MachineId })</p>
+    
+    </section>
+
+</section>
+
+<h4>Add/Register new machines:</h4>
+<p>@Html.ActionLink("Add Machine to for this Engineer to service.", "AddMachine", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Register a new machine", "Create", "Machines")</p>

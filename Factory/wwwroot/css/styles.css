@@ -1,0 +1,27 @@
+h1, h2, h3, h4 {
+	text-align: center;
+}
+
+body {
+	margin: 0 auto;
+}
+
+.main-section {
+	margin: 5vw;
+}
+
+nav {
+	display: flex;
+	gap: 1rem;
+	background-color: rgba(131, 163, 236, 0.8);
+	margin: 0;
+	padding: 1rem;
+	width: 100%;
+}
+
+.details-maininfo, .details-maininfo-card {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	justify-content: center;
+}
